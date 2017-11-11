@@ -1,10 +1,27 @@
+class Box
+{
+    int size;
+    int toggle;
+}
+
 int x_shift = 250;
 int y_shift = 250;
 int z_shift = 0;
-int[] box_size = {0, 10, 20, 30, 40, 50, 40, 30, 20, 10};
+
+Box[] boxes;
+
+int toggle = 1;
+
 void setup()
 {
     size(500, 500, P3D);
+    boxes = new Box[10];
+    for(int i = 0; i < 10; i++)
+    {
+        println(i);
+        boxes[i].size = i * 5;
+        boxes[i].toggle = 1;
+    }
 }
 
 void draw()
@@ -15,13 +32,13 @@ void draw()
     
     for (int i = 0; i < 10; i++)
     {
-        if((box_size[i] - 1) >= 0)
+        if((boxes[i].size + (1 * boxes[i].toggle)) >= 0 && (boxes[i].size + (1 * boxes[i].toggle)) <= 50)
         {
-            box_size[i] -= 1;
+            boxes[i].size += 1 * boxes[i].toggle;
         }
         else
         {
-            box_size[i] = 50;    
+            boxes[i].toggle *= -1;
         }
     }
     for(int i = 1; i < 10; i++)
