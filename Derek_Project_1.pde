@@ -44,7 +44,7 @@ void setup()
 
 void draw()
 {
-    background(100);
+    background(244, 143, 177);
     lights();
 
     
@@ -107,7 +107,7 @@ void draw()
             pushMatrix();
             translate(width/2 + x_rotation_offset, height/2 + y_rotation_offset, (-100) + z_rotation_offset);
             rotateX(-PI/4);
-            rotateY(PI/4 - ((PI/2) * (float(boxes[i + j].size)/float(BOX_MAX_WIDTH))) * boxes[i + j].toggle);   
+            rotateY(PI/4 + ((PI/2) * (float(boxes[i + j].size)/float(BOX_MAX_WIDTH))) * boxes[i + j].toggle);   
             strokeWeight(1);
             box(boxes[i + j].size);
             popMatrix();
