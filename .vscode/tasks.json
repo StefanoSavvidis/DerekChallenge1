@@ -4,6 +4,7 @@
     "isShellCommand": true,
     //"showOutput": "never",
     "args": [
+        
         "--sketch=${workspaceRoot}",
         //"--output=${workspaceRoot}\\out",
         "--force",
